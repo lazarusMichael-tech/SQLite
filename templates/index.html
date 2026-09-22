@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block title %}ภาพรวม | Michael Student Hub{% endblock %}
+{% block content %}
+<section class="hero">
+    <div>
+        <p class="eyebrow">LOCAL DATABASE / MICHAEL</p>
+        <h1>ศูนย์ข้อมูล<br><em>นักเรียน</em></h1>
+        <p class="hero-copy">จัดการข้อมูลจากฐานข้อมูล `michael` ด้วย SQLite แบบถาวร ใช้งานได้แม้ปิดแล้วเปิดใหม่</p>
+    </div>
+    <div class="hero-note"><span class="dot"></span><span>ระบบพร้อมใช้งาน</span><strong>{{ students|length }}</strong><small>นักเรียนในระบบ</small></div>
+</section>
+<section class="stats">
+    <div><span>STUDENTS</span><strong>{{ students|length }}</strong><small>ข้อมูลนักเรียน</small></div>
+    <div><span>COURSES</span><strong>{{ courses|length }}</strong><small>รายวิชาที่เปิด</small></div>
+    <div><span>DATABASE</span><strong>SQLite</strong><small>ข้อมูลไม่หายเมื่อปิดระบบ</small></div>
+</section>
+<section class="content-grid">
+    <div class="panel wide-panel">
+        <div class="panel-heading"><div><p class="eyebrow">TABLE / TBL_STD</p><h2>รายชื่อนักเรียน</h2></div><a class="button" href="{{ url_for('add_student') }}">เพิ่มนักเรียน <span>↗</span></a></div>
+        <div class="table-wrap"><table><thead><tr><th>รหัส</th><th>ชื่อ - นามสกุล</th><th>จำนวนวิชา</th></tr></thead><tbody>
+        {% for student in students %}<tr><td class="id-cell">{{ student.std_id }}</td><td>{{ student.std_name }}</td><td><span class="count-pill">{{ student.course_count }}</span></td></tr>{% else %}<tr><td colspan="3" class="empty">ยังไม่มีข้อมูลนักเรียน</td></tr>{% endfor %}
+        </tbody></table></div>
+    </div>
+    <div class="panel course-panel">
+        <div class="panel-heading"><div><p class="eyebrow">TABLE / TBL_COURSE</p><h2>รายวิชา</h2></div><a class="icon-link" href="{{ url_for('add_course') }}" title="เพิ่มรายวิชา">+</a></div>
+        <ul class="course-list">{% for course in courses %}<li><span class="course-code">{{ course.course_code }}</span><span>{{ course.course_name }}</span><b>{{ course.student_count }}</b></li>{% else %}<li class="empty">ยังไม่มีรายวิชา</li>{% endfor %}</ul>
+        <a class="text-link" href="{{ url_for('add_enrollment') }}">ลงทะเบียนนักเรียน <span>→</span></a>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,5 @@
+{% extends "base.html" %}
+{% block title %}เพิ่มรายวิชา | Michael Student Hub{% endblock %}
+{% block content %}
+<section class="form-page"><a class="back-link" href="{{ url_for('index') }}">← กลับหน้าภาพรวม</a><p class="eyebrow">INSERT / TBL_COURSE</p><h1>เพิ่ม<br><em>รายวิชา</em></h1><p class="form-intro">เพิ่มวิชาสำหรับใช้เชื่อมกับข้อมูลนักเรียน</p><form method="post" class="form-card"><label for="course_code">รหัสวิชา<input id="course_code" name="course_code" required placeholder="เช่น DB201"></label><label for="course_name">ชื่อวิชา<input id="course_name" name="course_name" required placeholder="เช่น Advanced Database"></label><button class="submit-button" type="submit">บันทึกรายวิชา <span>↗</span></button></form></section>
+{% endblock %}

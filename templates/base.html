@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="th">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}Michael Student Hub{% endblock %}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header class="topbar">
+        <a class="brand" href="{{ url_for('index') }}"><span class="brand-mark">M</span><span>Michael Student Hub</span></a>
+        <nav>
+            <a href="{{ url_for('index') }}">ภาพรวม</a>
+            <a class="nav-action" href="{{ url_for('add_student') }}">+ นักเรียน</a>
+            <a class="nav-action" href="{{ url_for('add_course') }}">+ รายวิชา</a>
+            <a class="nav-action" href="{{ url_for('add_enrollment') }}">+ ลงทะเบียน</a>
+        </nav>
+    </header>
+    <main class="page-shell">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <div class="alerts">
+                {% for category, message in messages %}
+                    <div class="alert {{ category }}">{{ message }}</div>
+                {% endfor %}
+                </div>
+            {% endif %}
+        {% endwith %}
+        {% block content %}{% endblock %}
+    </main>
+    <footer>SQLite local database · tbl_std / tbl_course / tbl_enrollment</footer>
+</body>
+</html>

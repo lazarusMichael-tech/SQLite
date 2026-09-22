@@ -1,0 +1,87 @@
+:root {
+    --ink: #172321;
+    --muted: #6c7773;
+    --line: #dfe5df;
+    --paper: #f7f8f3;
+    --white: #fff;
+    --lime: #d7f26c;
+    --coral: #ff765d;
+    --teal: #1b655d;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--paper); color: var(--ink); font-family: 'IBM Plex Sans Thai', sans-serif; }
+a { color: inherit; text-decoration: none; }
+.topbar { height: 76px; border-bottom: 1px solid var(--line); display: flex; align-items: center; justify-content: space-between; padding: 0 max(28px, calc((100% - 1180px) / 2)); background: #fbfcf8; }
+.brand { display: flex; align-items: center; gap: 11px; font-family: 'Space Grotesk', sans-serif; font-weight: 700; }
+.brand-mark { display: grid; place-items: center; width: 34px; height: 34px; background: var(--ink); color: var(--lime); font-size: 19px; border-radius: 50%; }
+.topbar nav { display: flex; align-items: center; gap: 22px; font-size: 14px; color: var(--muted); }
+.topbar nav a:hover { color: var(--ink); }
+.nav-action { border-left: 1px solid var(--line); padding-left: 20px; color: var(--ink) !important; }
+.page-shell { max-width: 1180px; margin: auto; padding: 58px 28px 90px; }
+.hero { display: flex; justify-content: space-between; align-items: end; min-height: 280px; padding-bottom: 48px; }
+.eyebrow { font: 600 11px 'Space Grotesk', sans-serif; letter-spacing: 1.4px; color: var(--teal); margin: 0 0 15px; }
+.hero h1, .form-page h1 { font: 700 clamp(48px, 7vw, 86px) / 1.08 'Space Grotesk', sans-serif; letter-spacing: 0; margin: 0; }
+.hero h1 em, .form-page h1 em { color: var(--coral); font-style: normal; }
+.hero-copy { color: var(--muted); max-width: 430px; margin: 26px 0 0; line-height: 1.7; }
+.hero-note { width: 164px; height: 164px; border-radius: 50%; background: var(--lime); padding: 27px 24px; display: flex; flex-direction: column; justify-content: center; position: relative; transform: rotate(5deg); font-size: 12px; }
+.hero-note .dot { height: 8px; width: 8px; background: var(--teal); border-radius: 50%; display: inline-block; margin-right: 6px; }
+.hero-note strong { font: 700 40px 'Space Grotesk', sans-serif; line-height: 1; margin-top: 12px; }
+.hero-note small { color: #56621d; margin-top: 3px; }
+.stats { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--ink); border-bottom: 1px solid var(--ink); margin-bottom: 30px; }
+.stats div { padding: 19px 0; }
+.stats div + div { border-left: 1px solid var(--line); padding-left: 26px; }
+.stats span { font: 600 10px 'Space Grotesk', sans-serif; letter-spacing: 1px; color: var(--muted); }
+.stats strong { font: 600 29px 'Space Grotesk', sans-serif; display: block; margin: 4px 0; }
+.stats small { color: var(--muted); }
+.content-grid { display: grid; grid-template-columns: 1.4fr 0.8fr; gap: 30px; }
+.panel { background: var(--white); border: 1px solid var(--line); padding: 28px; }
+.panel-heading { display: flex; align-items: start; justify-content: space-between; margin-bottom: 24px; }
+.panel h2 { font: 600 26px 'Space Grotesk', sans-serif; margin: 0; letter-spacing: 0; }
+.button, .submit-button { background: var(--ink); color: #fff; padding: 10px 15px; border: 0; font: 500 13px 'IBM Plex Sans Thai', sans-serif; cursor: pointer; }
+.button span, .submit-button span { color: var(--lime); padding-left: 8px; }
+.button:hover, .submit-button:hover { background: var(--teal); }
+.icon-link { font-size: 25px; color: var(--coral); line-height: 1; }
+.table-wrap { overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; font-size: 14px; }
+th { text-align: left; color: var(--muted); font: 600 10px 'Space Grotesk', sans-serif; letter-spacing: 1px; padding: 0 10px 12px; }
+td { padding: 15px 10px; border-top: 1px solid var(--line); }
+.id-cell { font-family: 'Space Grotesk', sans-serif; color: var(--teal); }
+.count-pill { display: inline-grid; place-items: center; min-width: 25px; height: 25px; border-radius: 50%; background: #edf2e9; color: var(--teal); font-size: 12px; }
+.course-list { list-style: none; padding: 0; margin: 0; }
+.course-list li { display: grid; grid-template-columns: 64px 1fr 24px; gap: 10px; align-items: center; padding: 14px 0; border-top: 1px solid var(--line); font-size: 13px; }
+.course-code { color: var(--coral); font: 600 11px 'Space Grotesk', sans-serif; }
+.course-list b { font: 500 12px 'Space Grotesk', sans-serif; color: var(--muted); text-align: right; }
+.text-link { display: block; margin-top: 25px; color: var(--teal); font-weight: 600; font-size: 13px; }
+.text-link span { padding-left: 8px; }
+.empty { color: var(--muted); text-align: center; padding: 24px; }
+.alerts { margin-bottom: 24px; }
+.alert { padding: 12px 16px; border-left: 4px solid var(--teal); background: #e8f2e9; font-size: 14px; }
+.alert.error { border-color: var(--coral); background: #fff0ed; }
+.form-page { max-width: 610px; margin: 10px auto; }
+.back-link { display: inline-block; color: var(--teal); font-size: 13px; margin-bottom: 58px; }
+.form-page h1 { font-size: 64px; }
+.form-intro { color: var(--muted); margin: 22px 0 34px; }
+.form-card { background: var(--white); border: 1px solid var(--line); padding: 30px; display: grid; gap: 22px; }
+.form-card label { font-size: 13px; font-weight: 600; }
+.form-card input, .form-card select { display: block; width: 100%; border: 0; border-bottom: 1px solid #b6c3bc; padding: 14px 0 10px; background: transparent; font: 400 16px 'IBM Plex Sans Thai', sans-serif; color: var(--ink); outline: none; }
+.form-card input:focus, .form-card select:focus { border-color: var(--teal); }
+.submit-button { justify-self: start; margin-top: 8px; }
+footer { text-align: center; border-top: 1px solid var(--line); padding: 22px; color: var(--muted); font: 11px 'Space Grotesk', sans-serif; letter-spacing: 0.5px; }
+@media (max-width: 760px) {
+    .topbar { height: auto; padding: 17px 20px; align-items: flex-start; gap: 16px; }
+    .topbar nav { gap: 10px; flex-wrap: wrap; justify-content: flex-end; }
+    .topbar nav a:first-child { display: none; }
+    .nav-action { padding-left: 10px; }
+    .page-shell { padding: 38px 20px 60px; }
+    .hero { display: block; min-height: 0; }
+    .hero-note { margin: 35px 0 0 5px; }
+    .stats { margin-top: 42px; }
+    .stats div + div { padding-left: 12px; }
+    .stats small { font-size: 11px; }
+    .content-grid { grid-template-columns: 1fr; gap: 20px; }
+    .panel { padding: 20px; }
+    .hero h1 { font-size: 58px; }
+    .form-page h1 { font-size: 54px; }
+    .back-link { margin-bottom: 40px; }
+}

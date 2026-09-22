@@ -1,0 +1,5 @@
+{% extends "base.html" %}
+{% block title %}ลงทะเบียน | Michael Student Hub{% endblock %}
+{% block content %}
+<section class="form-page"><a class="back-link" href="{{ url_for('index') }}">← กลับหน้าภาพรวม</a><p class="eyebrow">INSERT / TBL_ENROLLMENT</p><h1>ลงทะเบียน<br><em>รายวิชา</em></h1><p class="form-intro">เชื่อมข้อมูลนักเรียนกับรายวิชาที่เรียน</p><form method="post" class="form-card"><label for="std_id">นักเรียน<select id="std_id" name="std_id" required>{% for student in students %}<option value="{{ student.std_id }}">{{ student.std_id }} · {{ student.std_name }}</option>{% else %}<option disabled>กรุณาเพิ่มนักเรียนก่อน</option>{% endfor %}</select></label><label for="course_id">รายวิชา<select id="course_id" name="course_id" required>{% for course in courses %}<option value="{{ course.course_id }}">{{ course.course_code }} · {{ course.course_name }}</option>{% else %}<option disabled>กรุณาเพิ่มรายวิชาก่อน</option>{% endfor %}</select></label><button class="submit-button" type="submit">บันทึกการลงทะเบียน <span>↗</span></button></form></section>
+{% endblock %}

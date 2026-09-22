@@ -1,0 +1,5 @@
+{% extends "base.html" %}
+{% block title %}เพิ่มนักเรียน | Michael Student Hub{% endblock %}
+{% block content %}
+<section class="form-page"><a class="back-link" href="{{ url_for('index') }}">← กลับหน้าภาพรวม</a><p class="eyebrow">INSERT / TBL_STD</p><h1>เพิ่มข้อมูล<br><em>นักเรียน</em></h1><p class="form-intro">บันทึกข้อมูลใหม่ลงในตาราง `tbl_std`</p><form method="post" class="form-card"><label for="std_id">รหัสนักเรียน<input id="std_id" name="std_id" type="number" required autofocus placeholder="เช่น 47001"></label><label for="std_name">ชื่อ - นามสกุล<input id="std_name" name="std_name" required placeholder="เช่น Mr.New Student"></label><button class="submit-button" type="submit">บันทึกนักเรียน <span>↗</span></button></form></section>
+{% endblock %}
