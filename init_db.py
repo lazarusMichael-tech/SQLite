@@ -2,7 +2,7 @@ from pathlib import Path
 import sqlite3
 
 BASE_DIR = Path(__file__).resolve().parent
-DATABASE = BASE_DIR / "students.sqlite3"
+DATABASE = BASE_DIR / "students.db"
 SCHEMA = BASE_DIR / "schema.sql"
 
 seed_students = [

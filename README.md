@@ -43,6 +43,6 @@
 ## ไฟล์สำคัญ
 
 - `app.py` โค้ดเว็บ Flask และคำสั่ง SELECT/INSERT
-- `students.sqlite3` ฐานข้อมูล SQLite ที่ใช้งานจริง
+- `students.db` ฐานข้อมูล SQLite ที่ใช้งานจริง
 - `schema.sql` โครงสร้างตาราง
 - `init_db.py` สร้างตารางและข้อมูลตัวอย่าง

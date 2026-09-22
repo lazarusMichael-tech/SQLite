@@ -4,7 +4,7 @@ import sqlite3
 from flask import Flask, flash, redirect, render_template, request, url_for
 
 BASE_DIR = Path(__file__).resolve().parent
-DATABASE = BASE_DIR / "students.sqlite3"
+DATABASE = BASE_DIR / "students.db"
 
 app = Flask(__name__)
 app.config["SECRET_KEY"] = "local-student-app"
